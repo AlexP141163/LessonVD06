@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета</title>
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="mb-4">Анкета</h1>
+    <form method="post" action="/">
+        <div class="form-group">
+            <label for="name">Введите Имя и Фамилию</label>
+            <input id="name" type="text" name="name" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="city">Введите город проживания</label>
+            <input id="city" type="text" name="city" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="hobby">Введите Ваше Хобби</label>
+            <textarea id="hobby" name="hobby" class="form-control" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="year">Введите Ваш возраст</label>
+            <input id="year" type="text" name="year" class="form-map" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Отправить Анкету</button>
+    </form>
+    <hr>
+    <h2>Анкеты</h2>
+    {% for post in posts %}
+    <div class="post mb-3">
+        <h4>{{ post.name }}</h4>
+        <p>{{ post.city }}</p>
+        <p>{{ post.hobby }}</p>
+        <p>{{ post.year }}</p>
+    </div>
+    {% endfor %}
+</div>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

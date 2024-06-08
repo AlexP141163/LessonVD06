@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Анкета</title>
+</head>
+<body>
+
+<div class="container">
+    <h1>Анкета</h1>
+    <form method="post" action="/">
+        <div>
+            <label for="name">Ведите Имя и Фамилию</label>
+            <input id="name" type="text" name="name" required>
+        </div>
+        <br>
+        <div>
+            <label for="city">Ведите город проживания</label>
+            <input id="city" type="text" name="city" required>
+        </div>
+        <div>
+            <label for="hobby">Введите Ваше Хобби</label>
+            <textarea id="hobby" type="text" name="hobby" rows="3" required></textarea>
+        </div>
+        <div>
+            <label for="year">Ведите Ваш возраст</label>
+            <input id="year" type="text" name="year" required>
+        </div>
+        <button type="submit">Отправит Анкету</button>
+    </form>
+    <hr>
+    <h2>Анкеты</h2>
+    {% for post in posts %}
+    <div class="post">
+        <h4>{{ post.name }}</h4>
+        <p>{{ post.city }}</p>
+        <p>{{ post.hobby }}</p>
+        <p>{{ post.year }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>
